@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temario [Nombre de la Oposición] 2026 - Actualizado (Foro Oficial)</title>
+    <style>
+        /* Paleta de Colores Inspirada en XenForo */
+        :root {
+            --xf-dark-blue: #185886;  /* Azul oscuro principal */
+            --xf-light-blue: #edf6fa; /* Fondo azul muy claro */
+            --xf-accent: #f2930d;    /* Naranja/Amarillo de acción (botones) */
+            --xf-border: #d7edf7;     /* Color de bordes */
+            --text-main: #141414;
+            --text-muted: #656565;
+        }
+
+        body { 
+            font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', sans-serif;
+            line-height: 1.5;
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            background-color: var(--xf-light-blue);
+        }
+        
+        /* Encabezado Estilo Bloque XenForo */
+        header { 
+            background: var(--xf-dark-blue);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .hero h1 { margin: 0; font-size: 2.2rem; font-weight: 500; }
+        .hero p { font-size: 1.1rem; opacity: 0.8; margin-top: 8px; font-weight: 300; }
+
+        /* Contenedor Principal */
+        .container { max-width: 900px; margin: 30px auto; padding: 0 15px; }
+        
+        /* Bloque de Contenido Tipo "Post" */
+        .block {
+            background: white;
+            border: 1px solid var(--xf-border);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+        
+        .block-header {
+            background: #fdfdfd;
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--xf-border);
+            color: var(--xf-dark-blue);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        .block-body { padding: 25px; }
+
+        /* Lista de Puntos Fuertes */
+        .check-list { list-style: none; padding: 0; margin: 0; }
+        .check-list li { 
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+        .check-list li:last-child { border-bottom: none; }
+        .check-list li::before { 
+            content: "✔"; 
+            color: var(--xf-dark-blue); 
+            margin-right: 15px; 
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Sección de Venta Integrada */
+        .purchase-box {
+            text-align: center;
+            padding: 30px;
+            background-color: #fdfdfd;
+            border-top: 1px solid var(--xf-border);
+        }
+        
+        .price { 
+            font-size: 2rem; 
+            font-weight: 700; 
+            display: block; 
+            margin-bottom: 20px; 
+            color: var(--text-main);
+        }
+
+        /* Botón de Acción Estilo XenForo */
+        .btn-buy { 
+            background: var(--xf-accent);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: inline-block;
+            transition: background 0.2s, transform 0.1s;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .btn-buy:hover { background: #e0870c; text-decoration: none; }
+        .btn-buy:active { transform: translateY(1px); }
+
+        /* Pie de Página */
+        footer { 
+            text-align: center; 
+            padding: 30px; 
+            font-size: 0.9rem; 
+            color: var(--text-muted);
+            background: white;
+            border-top: 1px solid var(--xf-border);
+        }
+        footer a { color: var(--xf-dark-blue); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.6rem; }
+            .hero p { font-size: 1rem; }
+            .block-body, .purchase-box { padding: 15px; }
+            .btn-buy { font-size: 1rem; padding: 12px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="hero">
+        <h1>Temario [Escribe aquí el nombre] 2026</h1>
+        <p>Material oficial recomendado por la comunidad</p>
+    </div>
+</header>
+
+<div class="container">
+    
+    <main class="block">
+        <div class="block-header">¿Qué incluye este temario?</div>
+        
+        <div class="block-body">
+            <ul class="check-list">
+                <li>Todos los temas exigidos en la última convocatoria de XenForo.</li>
+                <li>Esquemas de repaso y mapas conceptuales de cada bloque.</li>
+                <li>Test de autoevaluación al final de cada tema para medir tu progreso.</li>
+                <li>Formato optimizado para lectura y estudio intensivo (PDF y Papel).</li>
+            </div>
+            
+            <article class="purchase-box">
+                <span class="price">[Precio, ej: 19,90€]</span>
+                
+                <a href="TU_LINK_DE_BUBOK" class="btn-buy" target="_blank">Comprar ahora en Bubok</a>
+                
+                <p style="margin-top: 20px; font-size: 0.85rem; color: var(--text-muted);">
+                    * Envío y descarga gestionados 100% por Bubok Editorial
+                </p>
+            </article>
+        </main>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 [TuUsuario] - Todos los derechos reservados.</p>
+    <p><a href="../index.html">Volver al foro</a> | <a href="https://www.bubok.es" target="_blank">Ver en Bubok</a></p>
+</footer>
+
+</body>
+</html>
