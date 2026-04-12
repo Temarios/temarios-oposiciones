@@ -96,36 +96,29 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: all 0.3s;
             border: 1px solid #eee;
-            display: flex;
-            flex-direction: column;
         }
 
         .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
 
         .card-img {
-            height: 350px; /* Aumentado para que quepa bien la portada vertical */
-            background: #f8f9fa; /* Un gris más sutil */
+            height: 200px;
+            background: #eee;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px; /* Espacio para que la imagen no toque los bordes */
+            overflow: hidden;
         }
         
-        .card-img img { 
-            max-width: 100%; 
-            max-height: 100%; 
-            object-fit: contain; /* Mantiene la proporción sin cortar nada */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave a la propia imagen */
-        }
+        .card-img img { width: 100%; height: 100%; object-fit: cover; }
 
-        .card-content { padding: 25px; flex-grow: 1; }
+        .card-content { padding: 25px; }
         .card-content h3 { margin: 0 0 10px; color: var(--primary); }
         .card-content p { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 20px; }
 
         .btn-card {
             display: block;
             text-align: center;
-            padding: 12px;
+            padding: 10px;
             border: 2px solid var(--primary);
             color: var(--primary);
             text-decoration: none;
@@ -149,7 +142,7 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .nav-links { display: none; }
+            .nav-links { display: none; } /* En móvil se simplifica */
         }
     </style>
 </head>
@@ -159,3 +152,64 @@
     <a href="#" class="logo">FORO<span>OPOSITORES</span></a>
     <div class="nav-links">
         <a href="https://foro.foroopositores.com">Foro</a>
+        <a href="#temarios">Temarios</a>
+        <a href="https://foro.foroopositores.com/contact">Contacto</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <h1>Tu plaza empieza aquí</h1>
+    <p>La comunidad de opositores más activa con el material de estudio más actualizado para la AGE, Justicia y más.</p>
+    <a href="https://foro.foroopositores.com" class="cta-main">Entrar a la Comunidad</a>
+</header>
+
+<div class="section-title" id="temarios">
+    <h2>Material de Preparación 2026</h2>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <div class="card-img">
+            <img src="portada-age.jpg" alt="Temario AGE">
+        </div>
+        <div class="card-content">
+            <h3>Cuerpo Administrativo AGE</h3>
+            <p>Completo, actualizado y con más de 1.000 test. Diseñado para optimizar tu tiempo de estudio.</p>
+            <a href="https://age.foroopositores.com" class="btn-card">Ver Temario AGE</a>
+        </div>
+    </div>
+
+    <div class="card" style="opacity: 0.7;">
+        <div class="card-img">
+            <div style="padding: 40px; text-align: center; color: #999;">Próximamente</div>
+        </div>
+        <div class="card-content">
+            <h3>Justicia y Auxilio</h3>
+            <p>Estamos ultimando los detalles del temario más completo para las pruebas de Justicia 2026.</p>
+            <a href="#" class="btn-card" style="pointer-events: none; border-color: #ccc; color: #ccc;">Disponible pronto</a>
+        </div>
+    </div>
+
+    <div class="card" style="opacity: 0.7;">
+        <div class="card-img">
+             <div style="padding: 40px; text-align: center; color: #999;">Próximamente</div>
+        </div>
+        <div class="card-content">
+            <h3>Correos y Telégrafos</h3>
+            <p>Todo lo que necesitas para superar el examen de Correos. Psicotécnicos y temario oficial.</p>
+            <a href="#" class="btn-card" style="pointer-events: none; border-color: #ccc; color: #ccc;">Disponible pronto</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="https://foro.foroopositores.com">El Foro</a>
+        <a href="#">Aviso Legal</a>
+        <a href="#">Privacidad</a>
+    </div>
+    <p>&copy; 2026 ForoOpositores.com - Preparación de oposiciones de élite.</p>
+</footer>
+
+</body>
+</html>
