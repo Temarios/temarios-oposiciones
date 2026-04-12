@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foro Opositores | Temarios Oficiales 2026</title>
+    <title>Foro Opositores | Comunidad y Temarios de Preparación</title>
     <style>
         :root {
             --primary: #185886;
+            --primary-dark: #0d3a5a;
             --accent: #f2930d;
             --bg-light: #f4f7f9;
             --text-dark: #2c3e50;
+            --text-gray: #5a6c7d;
             --white: #ffffff;
         }
 
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             background-color: var(--bg-light);
             color: var(--text-dark);
+            line-height: 1.6;
         }
 
+        /* Navegación */
         nav {
             background: var(--white);
             padding: 1rem 2rem;
@@ -33,171 +37,178 @@
         }
 
         .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); text-decoration: none; }
-        .logo span { color: var(--accent); }
 
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(24, 88, 134, 0.8), rgba(13, 58, 90, 0.9)), 
-                        url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1468&auto=format&fit=crop');
+            background: linear-gradient(rgba(24, 88, 134, 0.9), rgba(13, 58, 90, 0.9)), 
+                        url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=1500');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 60px 20px;
+            padding: 100px 20px;
             text-align: center;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.25rem; max-width: 800px; margin: 0 auto 30px; opacity: 0.9; }
+
+        .cta-main {
+            background: var(--accent);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
         }
 
+        .cta-main:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+        /* Sección de Temarios */
+        .section-title { text-align: center; margin: 60px 0 40px; }
+        .section-title h2 { font-size: 2.2rem; color: var(--primary); }
+
         .grid {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            padding: 0 20px 80px;
         }
 
         .card {
             background: var(--white);
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
             border: 1px solid #eee;
         }
 
-        .card:hover { transform: translateY(-8px); }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
 
         .card-img {
-            background: #fdfdfd;
-            height: 320px; /* Ajustado para portadas de libros */
+            height: 200px;
+            background: #eee;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px;
-            border-bottom: 1px solid #f0f0f0;
+            overflow: hidden;
         }
-
-        .card-img img {
-            max-height: 100%;
-            max-width: 100%;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-            border-radius: 4px;
-        }
-
-        .card-content { padding: 20px; flex-grow: 1; text-align: center; }
-        .card-content h3 { font-size: 1.1rem; margin: 0 0 10px; color: var(--primary); min-height: 2.4em; }
         
-        .btn-buy {
+        .card-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        .card-content { padding: 25px; }
+        .card-content h3 { margin: 0 0 10px; color: var(--primary); }
+        .card-content p { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 20px; }
+
+        .btn-card {
             display: block;
-            background: var(--primary);
-            color: white;
+            text-align: center;
+            padding: 10px;
+            border: 2px solid var(--primary);
+            color: var(--primary);
             text-decoration: none;
-            padding: 12px;
-            border-radius: 6px;
+            border-radius: 8px;
             font-weight: bold;
-            transition: background 0.3s;
+            transition: all 0.3s;
         }
 
-        .btn-buy:hover { background: var(--accent); }
+        .btn-card:hover { background: var(--primary); color: white; }
 
-        footer { background: #222; color: #fff; text-align: center; padding: 40px; margin-top: 50px; }
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: white; margin: 0 10px; text-decoration: none; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; } /* En móvil se simplifica */
+        }
     </style>
 </head>
 <body>
 
 <nav>
     <a href="#" class="logo">FORO<span>OPOSITORES</span></a>
-    <a href="https://foro.foroopositores.com" style="text-decoration:none; color:var(--primary); font-weight:bold;">Ir al Foro</a>
+    <div class="nav-links">
+        <a href="https://foro.foroopositores.com">Foro</a>
+        <a href="#temarios">Temarios</a>
+        <a href="https://foro.foroopositores.com/contact">Contacto</a>
+    </div>
 </nav>
 
 <header class="hero">
-    <h1>Material de Preparación 2026</h1>
-    <p>Consigue tu plaza con los temarios más actualizados de Bubok</p>
+    <h1>Tu plaza empieza aquí</h1>
+    <p>La comunidad de opositores más activa con el material de estudio más actualizado para la AGE, Justicia y más.</p>
+    <a href="https://foro.foroopositores.com" class="cta-main">Entrar a la Comunidad</a>
 </header>
 
-<div class="container">
-    <div class="grid">
-        
-        <div class="card">
-            <div class="card-img"><img src="portada-age.jpg" alt="Administrativo Estado"></div>
-            <div class="card-content">
-                <h3>Administrativo Estado (AGE)</h3>
-                <a href="https://www.bubok.es/libros/272214/Temario-Administrativo-Estado" class="btn-buy" target="_blank">Comprar en Bubok</a>
-            </div>
-        </div>
+<div class="section-title" id="temarios">
+    <h2>Material de Preparación 2026</h2>
+</div>
 
-        <div class="card">
-            <div class="card-img"><img src="portada-auxiliar-age.jpg" alt="Auxiliar Estado"></div>
-            <div class="card-content">
-                <h3>Auxiliar Administrativo Estado</h3>
-                <a href="#" class="btn-buy" target="_blank">Comprar en Bubok</a>
-            </div>
+<div class="grid">
+    <div class="card">
+        <div class="card-img">
+            <img src="portada-age.jpg" alt="Temario AGE">
         </div>
-
-        <div class="card">
-            <div class="card-img"><img src="portada-auxilio.jpg" alt="Auxilio Judicial"></div>
-            <div class="card-content">
-                <h3>Auxilio Judicial</h3>
-                <a href="#" class="btn-buy" target="_blank">Comprar en Bubok</a>
-            </div>
+        <div class="card-content">
+            <h3>Cuerpo Administrativo AGE</h3>
+            <p>Completo, actualizado y con más de 1.000 test. Diseñado para optimizar tu tiempo de estudio.</p>
+            <a href="https://age.foroopositores.com" class="btn-card">Ver Temario AGE</a>
         </div>
+    </div>
 
-        <div class="card">
-            <div class="card-img"><img src="portada-tramitacion.jpg" alt="Tramitación"></div>
-            <div class="card-content">
-                <h3>Tramitación Procesal</h3>
-                <a href="#" class="btn-buy" target="_blank">Comprar en Bubok</a>
-            </div>
+    <div class="card" style="opacity: 0.7;">
+        <div class="card-img">
+            <div style="padding: 40px; text-align: center; color: #999;">Próximamente</div>
         </div>
-
-        <div class="card">
-            <div class="card-img"><img src="portada-local.jpg" alt="Corporaciones Locales"></div>
-            <div class="card-content">
-                <h3>Auxiliar Administrativo Local</h3>
-                <a href="#" class="btn-buy" target="_blank">Comprar en Bubok</a>
-            </div>
+        <div class="card-content">
+            <h3>Justicia y Auxilio</h3>
+            <p>Estamos ultimando los detalles del temario más completo para las pruebas de Justicia 2026.</p>
+            <a href="#" class="btn-card" style="pointer-events: none; border-color: #ccc; color: #ccc;">Disponible pronto</a>
         </div>
+    </div>
 
-        <div class="card">
-            <div class="card-img"><img src="portada-celador.jpg" alt="Celador"></div>
-            <div class="card-content">
-                <h3>Celadores Servicio de Salud</h3>
-                <a href="#" class="btn-buy" target="_blank">Comprar en Bubok</a>
-            </div>
+    <div class="card" style="opacity: 0.7;">
+        <div class="card-img">
+             <div style="padding: 40px; text-align: center; color: #999;">Próximamente</div>
         </div>
-
-        <div class="card">
-            <div class="card-img"><img src="portada-tcae.jpg" alt="TCAE"></div>
-            <div class="card-content">
-                <h3>Auxiliar Enfermería (TCAE)</h3>
-                <a href="#" class="btn-buy" target="_blank">Comprar en Bubok</a>
-            </div>
+        <div class="card-content">
+            <h3>Correos y Telégrafos</h3>
+            <p>Todo lo que necesitas para superar el examen de Correos. Psicotécnicos y temario oficial.</p>
+            <a href="#" class="btn-card" style="pointer-events: none; border-color: #ccc; color: #ccc;">Disponible pronto</a>
         </div>
-
-        <div class="card">
-            <div class="card-img"><img src="portada-correos.jpg" alt="Correos"></div>
-            <div class="card-content">
-                <h3>Personal Laboral Correos</h3>
-                <a href="#" class="btn-buy" target="_blank">Comprar en Bubok</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-img"><img src="portada-psico.jpg" alt="Psicotécnicos"></div>
-            <div class="card-content">
-                <h3>Pack Psicotécnicos General</h3>
-                <a href="#" class="btn-buy" target="_blank">Comprar en Bubok</a>
-            </div>
-        </div>
-
     </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 ForoOpositores.com - Preparación de oposiciones líder en Bubok</p>
+    <div class="footer-links">
+        <a href="https://foro.foroopositores.com">El Foro</a>
+        <a href="#">Aviso Legal</a>
+        <a href="#">Privacidad</a>
+    </div>
+    <p>&copy; 2026 ForoOpositores.com - Preparación de oposiciones de élite.</p>
 </footer>
 
 </body>
