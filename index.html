@@ -3,173 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temario AGE 2026 | Cuerpo Administrativo y Auxiliar</title>
+    <title>Foro Opositores | Comunidad y Temarios de Preparación</title>
     <style>
         :root {
-            --xf-dark-blue: #185886;
-            --xf-light-blue: #edf6fa;
-            --xf-accent: #f2930d;
-            --text-main: #1d2129;
-            --text-muted: #4b4f56;
+            --primary: #185886;
+            --primary-dark: #0d3a5a;
+            --accent: #f2930d;
+            --bg-light: #f4f7f9;
+            --text-dark: #2c3e50;
+            --text-gray: #5a6c7d;
             --white: #ffffff;
         }
 
-        body { 
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            background-color: #f0f2f5;
-            color: var(--text-main);
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* Cabecera elegante */
-        header { 
-            background: linear-gradient(135deg, var(--xf-dark-blue) 0%, #0d3a5a 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .container { max-width: 1000px; margin: -50px auto 40px; padding: 0 20px; }
-
-        /* Tarjeta Principal */
-        .main-card {
+        /* Navegación */
+        nav {
             background: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-            display: grid;
-            grid-template-columns: 1fr 1.5fr; /* 1 parte imagen, 1.5 partes texto */
-            overflow: hidden;
-        }
-
-        /* Lado de la Imagen */
-        .product-image {
-            background: #f8f9fa;
+            padding: 1rem 2rem;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            padding: 40px;
-            border-right: 1px solid #eee;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .product-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
-        }
-        
-        .product-image img:hover { transform: scale(1.02); }
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); text-decoration: none; }
 
-        /* Lado del Contenido */
-        .product-info { padding: 40px; }
-        
-        .badge {
-            background: var(--xf-light-blue);
-            color: var(--xf-dark-blue);
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            text-transform: uppercase;
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-left: 20px;
+            transition: color 0.3s;
         }
 
-        h2 { color: var(--xf-dark-blue); font-size: 2rem; margin: 15px 0; }
+        .nav-links a:hover { color: var(--accent); }
 
-        .features { list-style: none; padding: 0; margin: 25px 0; }
-        .features li { 
-            margin-bottom: 12px; 
-            display: flex; 
-            align-items: flex-start;
-            font-size: 1.05rem;
-        }
-        
-        .features li::before {
-            content: "✦";
-            color: var(--xf-accent);
-            margin-right: 12px;
-            font-weight: bold;
-        }
-
-        /* Caja de Precio y Botón */
-        .price-tag {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(24, 88, 134, 0.9), rgba(13, 58, 90, 0.9)), 
+                        url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
             text-align: center;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.25rem; max-width: 800px; margin: 0 auto 30px; opacity: 0.9; }
+
+        .cta-main {
+            background: var(--accent);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+
+        .cta-main:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+        /* Sección de Temarios */
+        .section-title { text-align: center; margin: 60px 0 40px; }
+        .section-title h2 { font-size: 2.2rem; color: var(--primary); }
+
+        .grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px 80px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
             border: 1px solid #eee;
         }
 
-        .price-value { font-size: 2.2rem; font-weight: 800; color: var(--text-main); display: block; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+
+        .card-img {
+            height: 200px;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
         
-        .btn-buy {
-            background: var(--xf-accent);
-            color: white;
+        .card-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        .card-content { padding: 25px; }
+        .card-content h3 { margin: 0 0 10px; color: var(--primary); }
+        .card-content p { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 20px; }
+
+        .btn-card {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            border: 2px solid var(--primary);
+            color: var(--primary);
             text-decoration: none;
-            padding: 16px 40px;
-            border-radius: 6px;
+            border-radius: 8px;
             font-weight: bold;
-            font-size: 1.25rem;
-            display: inline-block;
-            margin-top: 15px;
-            width: 80%;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 0 #c77a0b;
+            transition: all 0.3s;
         }
 
-        .btn-buy:hover { background: #e0870c; transform: translateY(-2px); box-shadow: 0 6px 0 #c77a0b; }
-        .btn-buy:active { transform: translateY(2px); box-shadow: 0 0 0; }
+        .btn-card:hover { background: var(--primary); color: white; }
 
-        footer { text-align: center; color: var(--text-muted); padding: 40px 20px; font-size: 0.9rem; }
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 50px 20px;
+            text-align: center;
+        }
 
-        /* Ajuste para móviles */
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: white; margin: 0 10px; text-decoration: none; font-size: 0.9rem; }
+
         @media (max-width: 768px) {
-            .main-card { grid-template-columns: 1fr; }
-            .product-image { padding: 30px; }
-            .product-info { padding: 25px; }
-            header h1 { font-size: 1.8rem; }
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; } /* En móvil se simplifica */
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Material de Preparación AGE</h1>
-    <p>La guía definitiva para tu plaza en la Administración General del Estado</p>
+<nav>
+    <a href="#" class="logo">FORO<span>OPOSITORES</span></a>
+    <div class="nav-links">
+        <a href="https://foro.foroopositores.com">Foro</a>
+        <a href="#temarios">Temarios</a>
+        <a href="https://foro.foroopositores.com/contact">Contacto</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <h1>Tu plaza empieza aquí</h1>
+    <p>La comunidad de opositores más activa con el material de estudio más actualizado para la AGE, Justicia y más.</p>
+    <a href="https://foro.foroopositores.com" class="cta-main">Entrar a la Comunidad</a>
 </header>
 
-<div class="container">
-    <main class="main-card">
-        <div class="product-image">
-            <img src="bloqueofimatica.jpg" alt="Portada Temario AGE">
-        </div>
+<div class="section-title" id="temarios">
+    <h2>Material de Preparación 2026</h2>
+</div>
 
-        <div class="product-info">
-            <span class="badge">Actualizado Abril 2026</span>
-            <h2>Temario Completo Cuerpo AGE</h2>
-            <p>Diseñado específicamente para las convocatorias de Administrativo y Auxiliar. Incluye toda la normativa vigente y esquemas simplificados.</p>
-            
-            <ul class="features">
-                <li>Temas 1 a 28 revisados y anotados.</li>
-                <li>Más de 1.000 preguntas tipo test con solución.</li>
-                <li>Acceso a actualizaciones gratuitas durante 1 año.</li>
-                <li>Formato PDF interactivo y opción papel.</li>
-            </ul>
-
-            <div class="price-tag">
-                <span class="price-value">29,95€</span>
-                <a href="TU_LINK_DE_BUBOK" class="btn-buy" target="_blank">Comprar en Bubok</a>
-                <p style="font-size: 0.8rem; margin-top: 10px; color: #888;">Pago seguro y garantía de envío oficial.</p>
-            </div>
+<div class="grid">
+    <div class="card">
+        <div class="card-img">
+            <img src="portada-age.jpg" alt="Temario AGE">
         </div>
-    </main>
+        <div class="card-content">
+            <h3>Cuerpo Administrativo AGE</h3>
+            <p>Completo, actualizado y con más de 1.000 test. Diseñado para optimizar tu tiempo de estudio.</p>
+            <a href="https://age.foroopositores.com" class="btn-card">Ver Temario AGE</a>
+        </div>
+    </div>
+
+    <div class="card" style="opacity: 0.7;">
+        <div class="card-img">
+            <div style="padding: 40px; text-align: center; color: #999;">Próximamente</div>
+        </div>
+        <div class="card-content">
+            <h3>Justicia y Auxilio</h3>
+            <p>Estamos ultimando los detalles del temario más completo para las pruebas de Justicia 2026.</p>
+            <a href="#" class="btn-card" style="pointer-events: none; border-color: #ccc; color: #ccc;">Disponible pronto</a>
+        </div>
+    </div>
+
+    <div class="card" style="opacity: 0.7;">
+        <div class="card-img">
+             <div style="padding: 40px; text-align: center; color: #999;">Próximamente</div>
+        </div>
+        <div class="card-content">
+            <h3>Correos y Telégrafos</h3>
+            <p>Todo lo que necesitas para superar el examen de Correos. Psicotécnicos y temario oficial.</p>
+            <a href="#" class="btn-card" style="pointer-events: none; border-color: #ccc; color: #ccc;">Disponible pronto</a>
+        </div>
+    </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 ForoOpositores.com - Tu éxito es nuestro objetivo.</p>
-    <p><a href="https://foroopositores.com" style="color: var(--xf-dark-blue);">Volver a la Comunidad</a></p>
+    <div class="footer-links">
+        <a href="https://foro.foroopositores.com">El Foro</a>
+        <a href="#">Aviso Legal</a>
+        <a href="#">Privacidad</a>
+    </div>
+    <p>&copy; 2026 ForoOpositores.com - Preparación de oposiciones de élite.</p>
 </footer>
 
 </body>
