@@ -1,29 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Redirigiendo...</title>
-    <script type="text/javascript">
-        // Configuración de rutas
-        // Si tu sitio está en una subcarpeta (ej: usuario.github.io/proyecto/), pon '/proyecto'
-        var pathSegmentToKeep = ''; 
+<script type="text/javascript">
+    var path = window.location.pathname.toLowerCase();
+    var host = "https://foro.foroopositores.com"; // <--- Tu subdominio del foro
+    var principal = "https://temarios.github.io"; // <--- Tu web de GitHub
 
-        var l = window.location;
-        
-        /**
-         * Lógica de redirección inteligente:
-         * Este script toma la URL errónea y trata de llevar al usuario 
-         * a la página principal o a una estructura limpia.
-         */
-        
-        // Ejemplo: Si quieres que todo lo que falle vaya al home:
-        window.location.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + pathSegmentToKeep);
-        
-        // OPCIONAL: Si quieres intentar arreglar la ruta (ej: quitar .php o carpetas viejas)
-        // puedes manipular l.pathname antes de hacer el replace.
-    </script>
-</head>
-<body>
-    <p>Redirigiendo al sitio principal...</p>
-</body>
-</html>
+    // 1. Si la URL antigua contenía palabras clave del foro (ej: 'viewtopic', 'forum', 'post')
+    if (path.includes('forum') || path.includes('topic') || path.includes('phpbb')) {
+        window.location.replace(host); 
+    } 
+    // 2. Si es cualquier otra cosa, mándalo al inicio de la nueva web de GitHub
+    else {
+        window.location.replace(principal);
+    }
+</script>
